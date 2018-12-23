@@ -39,7 +39,6 @@ function parseXml(str) {
       dict[key] = dictValues;
     }
   }
-  console.log('DICT: ', dict)
   return dict;
 }
 // parseXml('<a>bla</a><b><c>yes</c><d>no</d></b>');
