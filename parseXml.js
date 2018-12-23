@@ -27,6 +27,7 @@ function parseXml(str) {
   if (str.indexOf("<") == -1) {
     return str
   }
+
   let i = 0;
   while (i < str.length) {
     if (str[i] === '<') {
@@ -35,12 +36,12 @@ function parseXml(str) {
       let content = getContent(str, key);
       str = str.substring(content.length + key.length + 3);
       const dictValues = parseXml(content);
-
       dict[key] = dictValues;
     }
   }
+  console.log('DICT: ', dict)
   return dict;
 }
-parseXml('<a>bla</a><b><c>yes</c><d>no</d></b>');
+// parseXml('<a>bla</a><b><c>yes</c><d>no</d></b>');
 
 module.exports = parseXml;
